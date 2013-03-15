@@ -1,3 +1,12 @@
+(function(){
+
+// module factory: start
+
+var moduleFactory = function($) {
+// module body: start
+
+var module = this;
+
 /*!
  * GMaps.js v0.3.1
  * http://hpneo.github.com/gmaps/
@@ -6,20 +15,18 @@
  * Released under the MIT License.
  */
 
-if(window.google && window.google.maps){
+var callbackId = $.callback(function(){
+
+  if(!window.google && !window.google.maps){
+    module.reject("Google Maps API is required. Please register the following JavaScript library http://maps.google.com/maps/api/js?sensor=true.");
+  }
 
   var GMaps = (function(global) {
     "use strict";
 
     var doc = document;
     var getElementById = function(id, context) {
-      var ele
-      if('jQuery' in global && context){
-        ele = $("#"+id.replace('#', ''), context)[0]
-      } else {
-        ele = doc.getElementById(id.replace('#', ''));
-      };
-      return ele;
+      return $("#"+id.replace('#', ''), context)[0];
     };
 
     var GMaps = function(options) {
@@ -468,7 +475,7 @@ if(window.google && window.google.maps){
                   if(!me.pixel){
                     me.pixel = map.getProjection().fromLatLngToPoint(me.latLng)
                   }
-                  
+
                   options[name].apply(this, [me]);
                 });
               }
@@ -1902,8 +1909,21 @@ if(window.google && window.google.maps){
 
     return new_array;
   };
-}
 
-else {
-  throw 'Google Maps API is required. Please register the following JavaScript library http://maps.google.com/maps/api/js?sensor=true.'
-}
+  module.resolveWith(GMaps);
+
+});
+
+// Load google maps api
+$.require()
+  .script("http://maps.google.com/maps/api/js?sensor=true&callback=" + callbackId)
+  .done();
+
+};
+// module factory: end
+
+dispatch("gmaps")
+.containing(moduleFactory)
+.to("$FOUNDRY_NAMESPACE Modules");
+
+}());
