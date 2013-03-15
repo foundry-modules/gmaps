@@ -1,12 +1,3 @@
-(function(){
-
-// module factory: start
-
-var moduleFactory = function($) {
-// module body: start
-
-var module = this;
-
 /*!
  * GMaps.js v0.3.1
  * http://hpneo.github.com/gmaps/
@@ -14,8 +5,6 @@ var module = this;
  * Copyright 2012, Gustavo Leon
  * Released under the MIT License.
  */
-
-var callbackId = $.callback(function(){
 
   if(!window.google && !window.google.maps){
     module.reject("Google Maps API is required. Please register the following JavaScript library http://maps.google.com/maps/api/js?sensor=true.");
@@ -1909,21 +1898,3 @@ var callbackId = $.callback(function(){
 
     return new_array;
   };
-
-  module.resolveWith(GMaps);
-
-});
-
-// Load google maps api
-$.require()
-  .script("http://maps.google.com/maps/api/js?sensor=true&callback=" + callbackId)
-  .done();
-
-};
-// module factory: end
-
-dispatch("gmaps")
-.containing(moduleFactory)
-.to("$FOUNDRY_NAMESPACE Modules");
-
-}());
