@@ -8,6 +8,97 @@ Visit the examples in [hpneo.github.com/gmaps](http://hpneo.github.com/gmaps/)
 Changelog
 ---------
 
+0.3.1
+-----------------------
+* Improve event binding at adding markers, polylines or polygons
+
+0.3
+-----------------------
+* Add native events to google.maps objects and custom events to GMaps maps
+* Check for Google Maps library and defined element when initialize
+* Allow route origins to be a string or array
+
+0.2.31
+-----------------------
+* Fix context menu position bug
+
+0.2.30
+-----------------------
+* New feature: StreetView Panoramas
+
+0.2.29
+-----------------------
+* New methods: removePolyline and removePolygon
+* Tests for Styled MapTypes
+
+0.2.28
+-----------------------
+* Test suite
+* Fix double event firing bug
+
+0.2.27
+-----------------------
+* Allow create context menus for markers
+
+0.2.26
+-----------------------
+* Fix bug in getElevations
+* Rename fitBounds to fitLatLngBounds
+
+0.2.25
+-----------------------
+* Support for GeoJSON in drawPolygon
+* Use 'complete' instead of 'always' in GMaps.geolocate
+
+0.2.24
+-----------------------
+* New feature: **Overlay Map Types**
+
+0.2.23
+-----------------------
+* Add full support to google.maps.PolylineOptions
+* New method: removeMarker
+
+0.2.22
+-----------------------
+* New feature: **Map Types**
+
+0.2.21
+-----------------------
+* Support to add google.maps.Marker objects in addMarker and addMarkers methods.
+
+0.2.20
+-----------------------
+* Add support for other HTML block elements instead "div" (like "section").
+
+0.2.19
+-----------------------
+* Use MarkerClusterer to group markers
+
+0.2.18
+-----------------------
+* Check if GMaps is defined before load extensions
+
+0.2.17
+-----------------------
+* Fix bug with disableDefaultUI option in constructor
+
+0.2.16
+-----------------------
+* Fix another bug in createMarker
+
+0.2.15
+-----------------------
+* Fix bug in createMarker
+
+0.2.14
+-----------------------
+* Adding IDs, classes and innerHTML to createControl. (**Note**: Use 'content' instead 'text' in createControl)
+
+0.2.13
+-----------------------
+* Add support for Places library in addLayer
+
 0.2.12
 -----------------------
 * Fix map events without MouseEvent object
