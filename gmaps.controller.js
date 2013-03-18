@@ -61,12 +61,12 @@ $.fn.gmaps = function(options) {
     options.div = '#' + id;
 
     // Override events
-    $.each($.GMap.mapEvents, function(i, eventName){
+    $.each($.GMaps.mapEvents, function(i, eventName){
 
       var originalEvent =
             ($.isFunction(options[eventName])) ?
               options[eventName] :
-              $.noop();
+              $.noop;
 
       options[eventName] = function(){
 
@@ -81,7 +81,8 @@ $.fn.gmaps = function(options) {
     });
 
     // Instantiate gmaps
-    map = el.data("gmaps") = new GMaps(options);
+    map = new GMaps(options);
+    el.data("gmaps", map);
 
     // Extend with go method
     map.go = function(lat, lng) {
