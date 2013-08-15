@@ -5,7 +5,7 @@
 
 // Load google maps api
 $.require()
-  .script("http://maps.google.com/maps/api/js?sensor=true&callback=" + callbackId)
+  .script($.uri(window.location).protocol() + "://maps.google.com/maps/api/js?sensor=true&callback=" + callbackId)
   .done();
 
 };
