@@ -11,7 +11,7 @@ $.require()
 };
 // module factory: end
 
-dispatch("gmaps")
+Dispatch("gmaps")
 .containing(moduleFactory)
 .to("$FOUNDRY_NAMESPACE Modules");
 
