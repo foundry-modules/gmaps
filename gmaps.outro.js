@@ -11,8 +11,6 @@ $.require()
 };
 // module factory: end
 
-Dispatch("gmaps")
-.containing(moduleFactory)
-.to("$FOUNDRY_NAMESPACE Modules");
+$FOUNDRY_BOOTLOADER.module("gmaps", moduleFactory);
 
 }());
