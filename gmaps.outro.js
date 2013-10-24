@@ -11,6 +11,6 @@ $.require()
 };
 // module factory: end
 
-$FOUNDRY_BOOTLOADER.module("gmaps", moduleFactory);
+%BOOTCODE%.module("gmaps", moduleFactory);
 
 }());
