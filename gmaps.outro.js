@@ -3,7 +3,7 @@
 
 });
 
-var language = $('meta[property="foundry:location:language"]').attr("content") || 'en';
+var language = $('meta[name="foundry:location:language"]').attr("content") || 'en';
 
 // Load google maps api
 $.require()
